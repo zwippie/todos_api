@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921100032) do
+ActiveRecord::Schema.define(version: 20140922180818) do
+
+  create_table "todo_lists", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "todos", force: true do |t|
     t.string   "title"
     t.boolean  "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "todo_list_id"
   end
+
+  add_index "todos", ["todo_list_id"], name: "index_todos_on_todo_list_id"
 
 end

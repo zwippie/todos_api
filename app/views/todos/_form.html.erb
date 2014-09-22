@@ -19,6 +19,10 @@
     <%= f.label :completed %><br>
     <%= f.check_box :completed %>
   </div>
+  <div class="field">
+    <%= f.label :todo_list_id %><br>
+    <%= f.collection_select :todo_list_id, TodoList.all, :id, :name %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
