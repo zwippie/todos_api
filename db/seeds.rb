@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+list = TodoList.create(name: 'First list')
+list.todos.create([
+  { title: 'First things first', completed: false },
+  { title: 'And now the rest', completed: false },
+  { title: 'Get milk', completed: true }
+])
